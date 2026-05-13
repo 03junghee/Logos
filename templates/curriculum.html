@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block title %}커리큘럼{% endblock %}
+
+{% block content %}
+<div class="py-5">
+    <div class="text-center mb-5" data-aos="fade-down">
+        <h2 class="display-5 fw-bold">커리큘럼</h2>
+        <p class="text-dim">초보자부터 취업 준비생까지, 목적에 맞는 트랙을 선택하세요.</p>
+    </div>
+
+    <div class="row g-4">
+        <!-- 바이브 코딩 -->
+        <div class="col-md-6" data-aos="flip-up" data-aos-delay="100">
+            <div class="logos-card p-4 h-100">
+                <h3 class="accent mb-3">바이브 코딩</h3>
+                <p>AI 프롬프트를 활용해 복잡한 문법 공부 없이 내가 원하는 결과물을 즉시 구현하기</p>
+                <small class="text-info">#AI활용 #생산성 #결과중심</small>
+            </div>
+        </div>
+
+        <!-- 클론 코딩 -->
+        <div class="col-md-6" data-aos="flip-up" data-aos-delay="200">
+            <div class="logos-card p-4 h-100">
+                <h3 class="accent mb-3">클론 코딩</h3>
+                <p>실제 서비스되는 웹/앱을 똑같이 따라 만들며 실무적인 구조와 흐름 익히기</p>
+                <small class="text-info">#실무감각 #프로젝트 #웹앱개발</small>
+            </div>
+        </div>
+
+        <!-- 하드 코딩 -->
+        <div class="col-md-6" data-aos="flip-up" data-aos-delay="300">
+            <div class="logos-card p-4 h-100">
+                <h3 class="accent mb-3">하드 코딩</h3>
+                <p>AI의 개입 없이 순수 로직을 직접 작성하며 컴퓨터 과학의 기초 실력 다지기</p>
+                <small class="text-info">#기초원리 #CS지식 #로직설계</small>
+            </div>
+        </div>
+
+        <!-- 코딩 테스트 -->
+        <div class="col-md-6" data-aos="flip-up" data-aos-delay="400">
+            <div class="logos-card p-4 h-100">
+                <h3 class="accent mb-3">코딩 테스트</h3>
+                <p>알고리즘과 자료구조를 통해 효율적인 문제 해결 능력을 키워 취업 대비하기</p>
+                <small class="text-info">#알고리즘 #취업준비 #문제해결</small>
+            </div>
+        </div>
+    </div>
+
+    <!-- 운영 방식 -->
+    <div class="mt-5 p-4 logos-card border-info" data-aos="fade-up">
+        <h4 class="accent mb-3">운영 방식</h4>
+        <ul class="text-dim mb-0">
+            <li>1주일에 한 번 대면 or 비대면으로 진행</li>
+            <li>각 커리큘럼에 맞춤형으로 과제 진행</li>
+            <li>만남 날짜와 장소는 멘토와 멘티랑 같이 정할 예정</li>
+        </ul>
+    </div>
+</div>
+{% endblock %}

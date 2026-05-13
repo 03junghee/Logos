@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %}후기{% endblock %}
+
+{% block content %}
+<div class="py-5">
+    <div class="text-center mb-5" data-aos="fade-down">
+        <h2 class="display-5 fw-bold">수강생 후기들</h2>
+        <p class="text-dim">로고스 멘토링을 통해 성장한 분들의 기록입니다.</p>
+    </div>
+
+    <div class="row g-4">
+        <!-- 후기 카드 1 -->
+        <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+            <div class="logos-card overflow-hidden">
+                <!-- Imgur 링크를 src에 직접 넣으세요 -->
+                <img src="https://i.imgur.com/example1.jpg" class="img-fluid" alt="후기 사진 1" style="width: 100%; height: 250px; object-fit: cover;">
+                <div class="p-3">
+                    <p class="mb-0">"코딩의 'ㅋ'자도 몰랐는데 바이브 코딩으로 나만의 웹사이트를 뚝딱 만들었어요!"</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 후기 카드 2 -->
+        <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+            <div class="logos-card overflow-hidden">
+                <img src="https://i.imgur.com/example2.jpg" class="img-fluid" alt="후기 사진 2" style="width: 100%; height: 250px; object-fit: cover;">
+                <div class="p-3">
+                    <p class="mb-0">"실제 강사님이라 그런지 로직 설명이 너무 깔끔합니다. 하드 코딩 강추!"</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 후기 카드 3 -->
+        <div class="col-md-4" data-aos="zoom-in" data-aos-delay="300">
+            <div class="logos-card overflow-hidden">
+                <img src="https://i.imgur.com/example3.jpg" class="img-fluid" alt="후기 사진 3" style="width: 100%; height: 250px; object-fit: cover;">
+                <div class="p-3">
+                    <p class="mb-0">"AI를 도구로 쓰는 법을 배우니 개발 속도가 5배는 빨라진 것 같아요."</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

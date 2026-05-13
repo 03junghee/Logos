@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logos - {% block title %}{% endblock %}</title>
+
+    <!-- Bootstrap 5 & Google Fonts -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+    
+    <!-- AOS Library (Animation on Scroll) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Google Fonts: JetBrains Mono (400, 700) -->
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        @font-face {
+            font-family: 'GangwonEducationTteontteon';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEduPowerExtraBoldA.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        :root {
+            --bg-dark: #0A192F;       /* 딥 네이비 배경 */
+            --bg-card: #112240;       /* 카드/네비 배경 */
+            --accent-cyan: #00F2FF;   /* 핵심 포인트 색상 */
+            --text-main: #E6F1FF;     /* 밝은 텍스트 */
+            --text-dim: #8892B0;      /* 흐린 텍스트 */
+            --font-main: 'Pretendard', sans-serif; /* 본문용 가독성 폰트 */
+            --font-point: 'GangwonEducationTteontteon', sans-serif; /* 강조용 폰트 */
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* --- Navigation --- */
+        .navbar {
+            background-color: rgba(10, 25, 47, 0.95) !important;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 242, 255, 0.1);
+            padding: 1.2rem 0;
+        }
+
+        .navbar-brand {
+            font-family: var(--font-point);
+            letter-spacing: 0.5px; /* 두꺼운 폰트이므로 자간을 살짝 벌려주면 더 시원해 보입니다 */
+            font-weight: 800;
+            font-size: 1.5rem;
+            letter-spacing: 2px;
+            color: var(--accent-cyan) !important;
+            text-shadow: 0 0 10px rgba(0, 242, 255, 0.3);
+        }
+
+        .nav-link {
+            color: var(--text-main) !important;
+            margin: 0 15px;
+            font-weight: 500;
+            transition: 0.3s;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: var(--accent-cyan) !important;
+        }
+
+        /* 메뉴 하단 라인 애니메이션 */
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0; height: 2px;
+            bottom: -5px; left: 0;
+            background-color: var(--accent-cyan);
+            transition: 0.3s;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* --- Global Animations & Classes --- */
+        .accent { 
+            font-family: var(--font-point);
+            letter-spacing: 0.5px; /* 두꺼운 폰트이므로 자간을 살짝 벌려주면 더 시원해 보입니다 */
+        }
+        
+        .btn-logos {
+            border: 1px solid var(--accent-cyan);
+            color: var(--accent-cyan);
+            background: transparent;
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: all 0.4s ease;
+            text-decoration: none;
+            display: inline-block;
+            font-family: var(--font-point);
+            letter-spacing: 0.5px; /* 두꺼운 폰트이므로 자간을 살짝 벌려주면 더 시원해 보입니다 */
+        }
+
+        .btn-logos:hover {
+            background: rgba(0, 242, 255, 0.1);
+            box-shadow: 0 0 20px rgba(0, 242, 255, 0.4);
+            transform: translateY(-3px);
+            color: var(--accent-cyan);
+        }
+
+        /* 카드 공통 애니메이션 효과 */
+        .logos-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(0, 242, 255, 0.1);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .logos-card:hover {
+            border-color: var(--accent-cyan);
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(2, 12, 27, 0.7);
+        }
+
+        /* --- Footer --- */
+        footer {
+            padding: 60px 0 30px;
+            margin-top: 100px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            text-align: center;
+        }
+
+        .footer-text {
+            color: var(--text-dim);
+            font-size: 0.9rem;
+        }
+
+        .font-mono {
+            font-family: 'JetBrains Mono', monospace !important;
+            letter-spacing: -0.5px; /* 모노스페이스는 자간을 살짝 좁히면 더 예쁩니다 */
+        }
+
+        .navbar-brand{
+            font-family: var(--font-point);
+            letter-spacing: 0.5px; /* 두꺼운 폰트이므로 자간을 살짝 벌려주면 더 시원해 보입니다 */  
+        }
+
+        .h1 {
+            font-family: var(--font-point);
+            letter-spacing: 0.5px; /* 두꺼운 폰트이므로 자간을 살짝 벌려주면 더 시원해 보입니다 */  
+        }
+
+        .h2 {
+            font-family: var(--font-point);
+            letter-spacing: 0.5px; /* 두꺼운 폰트이므로 자간을 살짝 벌려주면 더 시원해 보입니다 */  
+        }
+
+        .h3 {
+            font-family: var(--font-point);
+            letter-spacing: 0.5px; /* 두꺼운 폰트이므로 자간을 살짝 벌려주면 더 시원해 보입니다 */  
+        }
+
+        .h4 {
+            font-family: var(--font-point);
+            letter-spacing: 0.5px; /* 두꺼운 폰트이므로 자간을 살짝 벌려주면 더 시원해 보입니다 */  
+        }
+
+        .code-inline {
+            background-color: rgba(0, 242, 255, 0.1);
+            color: #00F2FF;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: var(--font-point);
+            letter-spacing: 0.5px; /* 두꺼운 폰트이므로 자간을 살짝 벌려주면 더 시원해 보입니다 */  
+            font-size: 0.9em;
+            border: 1px solid rgba(0, 242, 255, 0.2);
+        }
+
+        /* 스크롤바 커스텀 */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg-dark); }
+        ::-webkit-scrollbar-thumb { background: var(--bg-card); border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--accent-cyan); }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'main' %}">LOGOS</a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="{% url 'instructor' %}">강사소개</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'curriculum' %}">커리큘럼</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'reviews' %}">후기</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'faq' %}">FAQ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'apply' %}">지원하기</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="container my-5">
+        {% block content %}
+        <!-- 각 페이지의 내용이 이곳에 렌더링됩니다 -->
+        {% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p class="accent fw-bold mb-2">Logos Mentoring</p>
+            <p class="footer-text mb-4">Rooted in Logic, Driven by AI.</p>
+            <p class="footer-text">© 2026 Logos. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JS Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // AOS 애니메이션 초기화
+        AOS.init({
+            duration: 1000,
+            once: false,
+            mirror: true,
+            anchorPlacement: 'top-bottom',
+        });
+    </script>
+</body>
+</html>

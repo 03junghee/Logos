@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block title %}FAQ{% endblock %}
+
+{% block content %}
+<div class="py-5">
+    <h2 class="display-5 fw-bold mb-5" data-aos="fade-right">FAQ</h2>
+
+    <div class="accordion accordion-flush" id="faqAccordion" data-aos="fade-up">
+        <!-- 질문 1 -->
+        <div class="accordion-item bg-transparent border-secondary">
+            <h2 class="accordion-header">
+                <button class="accordion-button bg-transparent text-white collapsed accent fs-5" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                    Q. 무료로 진행하는 특별한 이유가 있나요?
+                </button>
+            </h2>
+            <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion" style="color: white;">
+                <div class="accordion-body text-dim">
+                    상업적인 목적보다는 현재 제작 중인 커리큘럼의 강화와 데이터 검증이 주 목적입니다. 대신 멘토링 후 정성스러운 피드백을 부탁드리고 있습니다.
+                </div>
+            </div>
+        </div>
+
+        <!-- 질문 2 -->
+        <div class="accordion-item bg-transparent border-secondary">
+            <h2 class="accordion-header">
+                <button class="accordion-button bg-transparent text-white collapsed accent fs-5" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                    Q. 인문계열/비전공자도 신청 가능한가요?
+                </button>
+            </h2>
+            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion" style="color: white;">
+                <div class="accordion-body text-dim">
+                    물론입니다! 특히 '바이브 코딩' 트랙은 전문적인 코딩 지식이 없어도 AI를 활용해 성과를 낼 수 있도록 구성되어 있어 초보자분들께 적극 추천합니다.
+                </div>
+            </div>
+        </div>
+
+        <!-- 질문 3 -->
+        <div class="accordion-item bg-transparent border-secondary">
+            <h2 class="accordion-header">
+                <button class="accordion-button bg-transparent text-white collapsed accent fs-5" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                    Q. 별도의 준비물이 필요한가요?
+                </button>
+            </h2>
+            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion" style="color: white;">
+                <div class="accordion-body text-dim">
+                    개인 노트북은 필수입니다. 수업은 주로 카페나 룸에서 진행되며, 카페 이용 시 발생하는 본인 음료 비용 정도만 부담해 주시면 됩니다.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .accordion-button::after { filter: invert(1); } /* 화살표 아이콘 흰색으로 변경 */
+    .accordion-button:not(.collapsed) { background-color: rgba(0, 242, 255, 0.1) !important; color: #00F2FF !important; }
+</style>
+{% endblock %}

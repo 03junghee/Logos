@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+
+{% block title %}강사 소개{% endblock %}
+
+{% block content %}
+<div class="py-5">
+    <!-- 페이지 제목 -->
+    <h2 class="display-5 fw-bold mb-5" data-aos="fade-right">강사 소개</h2>
+    
+    <!-- 전체 카드 -->
+    <div class="logos-card p-4 p-md-5" data-aos="fade-up">
+        <div class="row align-items-stretch"> <!-- 높이를 동일하게 맞춤 -->
+            
+            <!-- 왼쪽: 강사 사진 영역 -->
+            <div class="col-lg-5 col-md-6 mb-4 mb-md-0">
+                <div class="h-100 d-flex align-items-center justify-content-center">
+                    <!-- 테두리를 없애고 높이를 부모에 꽉 차게 설정 -->
+                    <img src="https://i.imgur.com/ob91P8O.png" 
+                         alt="Instructor" 
+                         class="img-fluid rounded" 
+                         style="height: 90%; width: 90%; object-fit: cover; border: none; box-shadow: none;">
+                </div>
+            </div>
+            
+            <!-- 오른쪽: 약력 및 코멘트 영역 (사진 높이의 기준이 됨) -->
+            <div class="col-lg-7 col-md-6 d-flex flex-column justify-content-between">
+                <div class="ps-md-4">
+
+                    <!-- 💡 닉네임 추가: MAX -->
+                    <div class="mb-4">
+                        <span class="accent fw-bold" style="font-size: 1.2rem; letter-spacing: 2px;">INSTRUCTOR</span>
+                        <h1 class="display-4 fw-bold mt-1 mb-4" style="font-family: 'GangwonEducationTteontteon';">MAX</h1>
+                    </div>
+
+                    <!-- Education 섹션 -->
+                    <div class="mb-4">
+                        <h3 class="accent mb-3" style="font-size: 1.8rem; line-height: 1.2;">Education</h3>
+                        <p class="fs-5 mb-0 text-white">S대 컴퓨터공학부 졸업</p>
+                    </div>
+
+                    <!-- Career 섹션 -->
+                    <div class="mb-4">
+                        <h3 class="accent mb-3" style="font-size: 1.8rem; line-height: 1.2;">Career</h3>
+                        <ul class="list-unstyled fs-5" style="color: #ccd6f6; line-height: 1.8;">
+                            <li>前) M 교육 플랫폼 조교 1년</li>
+                            <li>前) 목동 C 컴퓨터 종합학원 강사 3년</li>
+                            <li class="text-white fw-bold">現) S 교육 회사 강사</li>
+                        </ul>
+                    </div>
+
+                    <!-- 구분선 및 코멘트 -->
+                    <div class="mt-4 pt-4 border-top" style="border-color: rgba(255, 255, 255, 0.1) !important;">
+                        <p class="fst-italic fs-5 text-dim mb-0" style="line-height: 1.6;">
+                            <span class="accent fs-3">"</span>
+                            단순한 문법 교육이 아닙니다. AI 시대에 가장 효율적으로 <br class="d-none d-lg-block">
+                            논리(Logic)를 구현하는 방법을 함께 고민합니다.
+                            <span class="accent fs-3">"</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div> <!-- row end -->
+    </div> <!-- logos-card end -->
+</div>
+
+<style>
+    /* 텍스트 흐린 색상 */
+    .text-dim {
+        color: #8892b0;
+    }
+
+    /* 이미지의 그림자나 테두리 강제 제거 */
+    img {
+        border: none !important;
+        outline: none !important;
+        box-shadow: none !important;
+    }
+
+    h1 {
+            color: var(--text-main);
+            text-shadow: 0 0 15px rgba(0, 242, 255, 0.3);
+        }
+
+    /* 모바일 대응: 사진이 위로 갈 때는 높이 제한 */
+    @media (max-width: 767px) {
+        .row {
+            display: block; /* 모바일에서는 높이 동기화 해제 */
+        }
+        img {
+            max-height: 350px !important;
+            margin-bottom: 2rem;
+            object-fit: contain; /* 모바일은 비율 위주로 */
+        }
+    }
+</style>
+{% endblock %}
