@@ -1,45 +1,175 @@
 {% extends 'base.html' %}
 
-{% block title %}후기{% endblock %}
+{% block title %}수강생 후기{% endblock %}
 
 {% block content %}
 <div class="py-5">
-    <div class="text-center mb-5" data-aos="fade-down">
-        <h2 class="display-5 fw-bold">수강생 후기들</h2>
-        <p class="text-dim">로고스 멘토링을 통해 성장한 분들의 기록입니다.</p>
-    </div>
+    <h2 class="display-5 fw-bold mb-5" data-aos="fade-right">후기</h2>
 
-    <div class="row g-4">
-        <!-- 후기 카드 1 -->
-        <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
-            <div class="logos-card overflow-hidden">
-                <!-- Imgur 링크를 src에 직접 넣으세요 -->
-                <img src="https://i.imgur.com/example1.jpg" class="img-fluid" alt="후기 사진 1" style="width: 100%; height: 250px; object-fit: cover;">
-                <div class="p-3">
-                    <p class="mb-0">"코딩의 'ㅋ'자도 몰랐는데 바이브 코딩으로 나만의 웹사이트를 뚝딱 만들었어요!"</p>
+    <div class="reviews-container">
+        <!-- 1번째 후기 (왼쪽) -->
+        <div class="review-wrapper left" data-aos="fade-right">
+            <div class="profile-group">
+                <div class="profile-circle shadow-glow">
+                    <img src="https://i.pinimg.com/736x/ec/b3/32/ecb3320a4cb66ecdd9dd903f1fd6a5d8.jpg" alt="Student 1">
                 </div>
+                <p class="student-name">이O원</p>
+            </div>
+            <div class="review-bubble shadow-glow">
+                "바이브 코딩 처음 접해봐서 어떻게 시작할지도 모르겠는데 정말 빠르게 변화되는 시대에 맞게 여러 기술들을 알려 주셔서 지금은 혼자서도 프롬프팅을 작성할 수 있게 되었습니다."
             </div>
         </div>
 
-        <!-- 후기 카드 2 -->
-        <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
-            <div class="logos-card overflow-hidden">
-                <img src="https://i.imgur.com/example2.jpg" class="img-fluid" alt="후기 사진 2" style="width: 100%; height: 250px; object-fit: cover;">
-                <div class="p-3">
-                    <p class="mb-0">"실제 강사님이라 그런지 로직 설명이 너무 깔끔합니다. 하드 코딩 강추!"</p>
+        <!-- 2번째 후기 (오른쪽) -->
+        <div class="review-wrapper right" data-aos="fade-left">
+            <div class="review-bubble shadow-glow accent-border">
+                "최근 AI가 발전하면서 어떻게 코딩을 공부해야 할지 막막했는데 강사님을 통해 더욱 효율적이고 논리적으로 코딩을 배울 수 있었습니다."
+            </div>
+            <div class="profile-group">
+                <div class="profile-circle shadow-glow">
+                    <img src="https://i.pinimg.com/736x/72/b7/18/72b7182a9780959c2ba6017db50b7fa3.jpg" alt="Student 2">
                 </div>
+                <p class="student-name">김O수</p>
             </div>
         </div>
 
-        <!-- 후기 카드 3 -->
-        <div class="col-md-4" data-aos="zoom-in" data-aos-delay="300">
-            <div class="logos-card overflow-hidden">
-                <img src="https://i.imgur.com/example3.jpg" class="img-fluid" alt="후기 사진 3" style="width: 100%; height: 250px; object-fit: cover;">
-                <div class="p-3">
-                    <p class="mb-0">"AI를 도구로 쓰는 법을 배우니 개발 속도가 5배는 빨라진 것 같아요."</p>
+        <!-- 3번째 후기 (왼쪽) -->
+        <div class="review-wrapper left" data-aos="fade-right">
+            <div class="profile-group">
+                <div class="profile-circle shadow-glow">
+                    <img src="https://i.pinimg.com/736x/bd/42/8e/bd428e6bb156d90045700dbf3e967c3e.jpg" alt="Student 3">
                 </div>
+                <p class="student-name">이O우</p>
+            </div>
+            <div class="review-bubble shadow-glow">
+                "클론 코딩을 배울 때 단순히 따라만 하라고 하는 것이 아니라 왜 이런 구조가 되는 것이고 어떻게 작동하는지 하나하나 친절하게 설명해 주셔서 정말 큰 도움이 되었습니다."
+            </div>
+        </div>
+
+        <!-- 4번째 후기 (오른쪽) -->
+        <div class="review-wrapper right" data-aos="fade-left">
+            <div class="review-bubble shadow-glow accent-border">
+                "비전동자라 C언어 공부가 막막했는데 프로그래밍 언어에 대한 기본 구조부터 가장 어려운 포인터까지 자세하게 설명해 주셔서 잘 이해가 되었습니다."
+            </div>
+            <div class="profile-group">
+                <div class="profile-circle shadow-glow">
+                    <img src="https://i.pinimg.com/736x/ed/39/a7/ed39a771e01c2bc1b1e76bf95e95ae25.jpg" alt="Student 4">
+                </div>
+                <p class="student-name">박O빈</p>
+            </div>
+        </div>
+
+        <!-- 5번째 후기 (왼쪽) -->
+        <div class="review-wrapper left" data-aos="fade-right">
+            <div class="profile-group">
+                <div class="profile-circle shadow-glow">
+                    <img src="https://i.pinimg.com/736x/a9/c7/77/a9c777f17a9aac4848a2d0f37c33131a.jpg" alt="Student 5">
+                </div>
+                <p class="student-name">이O연</p>
+            </div>
+            <div class="review-bubble shadow-glow">
+                "대기업 코테 문제들이 너무 어렵고 알고리즘도 어떻게 적용해야 할지 막막했는데 수학 문제 푸는 것처럼 알려주셔서 문제 접근 실력이 향상되었고 알고리즘 적용도 잘할 수 있게 되었습니다."
             </div>
         </div>
     </div>
 </div>
+
+<style>
+    /* 전체 컨테이너 */
+    .reviews-container {
+        display: flex;
+        flex-direction: column;
+        gap: 80px; /* 후기간 간격 */
+        max-width: 1000px;
+        margin: 0 auto;
+        padding-bottom: 100px;
+    }
+
+    /* 후기 한 세트 */
+    .review-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        width: 100%;
+    }
+
+    .review-wrapper.right {
+        justify-content: flex-end;
+        
+    }
+
+    /* 프로필 그룹 (이미지 + 이름) */
+    .profile-group {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-width: 120px;
+    }
+
+    .profile-circle {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 2px solid var(--accent-cyan);
+        margin-bottom: 15px;
+    }
+
+    .profile-circle img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .student-name {
+        font-family: 'GangwonEducationTteontteon', sans-serif;
+        color: var(--accent-cyan);
+        font-size: 1rem;
+        margin: 0;
+    }
+
+    /* 말풍선 스타일 */
+    .review-bubble {
+        background-color: rgba(255, 255, 255, 0.05);
+        padding: 30px 40px;
+        border-radius: 30px;
+        color: #ccd6f6;
+        font-size: 1.15rem;
+        line-height: 1.8;
+        max-width: 650px;
+        position: relative;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .accent-border {
+        border-color: rgba(0, 242, 255, 0.2);
+    }
+
+    /* 글로우 효과 */
+    .shadow-glow {
+        box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+        transition: transform 0.3s ease;
+    }
+
+    .shadow-glow:hover {
+        transform: translateY(-5px);
+        background-color: rgba(255, 255, 255, 0.08);
+    }
+
+    /* 모바일 반응형 */
+    @media (max-width: 768px) {
+        .review-wrapper, .review-wrapper.right {
+            flex-direction: column !important;
+            text-align: center;
+            gap: 20px;
+        }
+        .review-bubble {
+            order: 2; /* 텍스트가 사진 밑으로 */
+            padding: 20px;
+        }
+        .profile-group {
+            order: 1;
+        }
+    }
+</style>
 {% endblock %}
