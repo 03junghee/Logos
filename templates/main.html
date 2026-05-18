@@ -3,6 +3,9 @@
 {% block title %}메인{% endblock %}
 
 {% block content %}
+<!-- ==========================================
+     1. 메인 페이지 섹션
+     ========================================== -->
 <div class="d-flex flex-column align-items-center justify-content-center text-center" style="min-height: 70vh;">
     <!-- Imgur 로고 이미지 (전달해주신 첫 번째 사진 링크로 대체하세요) -->
     <div data-aos="zoom-in">
@@ -14,8 +17,618 @@
     </h1>
 
     <div data-aos="fade-up" data-aos-delay="600">
+        <!-- 원페이지 스크롤 이동을 위해 href를 하단 지원하기 섹션 ID로 연결 가능합니다. (현재는 원본 유지) -->
         <a href="{% url 'apply' %}" class="btn-logos">무료 멘토링 신청하기</a>
     </div>
-
 </div>
+
+<hr class="border-secondary my-5" style="opacity: 0.1;">
+
+<!-- ==========================================
+     2. 강사 소개 섹션
+     ========================================== -->
+<div class="py-5">
+    <!-- 페이지 제목 -->
+    <h2 class="display-5 fw-bold mb-5" data-aos="fade-right">강사 소개</h2>
+    
+    <!-- 전체 카드 -->
+    <div class="logos-card p-4 p-md-5" data-aos="fade-up">
+        <div class="row align-items-stretch"> <!-- 높이를 동일하게 맞춤 -->
+            
+            <!-- 왼쪽: 강사 사진 영역 -->
+            <div class="col-lg-5 col-md-6 mb-4 mb-md-0">
+                <div class="h-100 d-flex align-items-center justify-content-center">
+                    <!-- 테두리를 없애고 높이를 부모에 꽉 차게 설정 -->
+                    <img src="https://i.imgur.com/pTug4Lv.png" 
+                         alt="Instructor" 
+                         class="img-fluid rounded" 
+                         style="height: 100%; width: 100%; object-fit: cover; border: none; box-shadow: none;">
+                </div>
+            </div>
+            
+            <!-- 오른쪽: 약력 및 코멘트 영역 (사진 높이의 기준이 됨) -->
+            <div class="col-lg-7 col-md-6 d-flex flex-column justify-content-between">
+                <div class="ps-md-4">
+
+                    <!-- 💡 닉네임 추가: MAX -->
+                    <div class="mb-4">
+                        <span class="accent fw-bold" style="font-size: 1.2rem; letter-spacing: 2px;">INSTRUCTOR</span>
+                        <h1 class="display-4 fw-bold mt-1 mb-4" style="font-family: 'GangwonEducationTteontteon';">MAX</h1>
+                    </div>
+
+                    <!-- Education 섹션 -->
+                    <div class="mb-4">
+                        <h3 class="accent mb-3" style="font-size: 1.8rem; line-height: 1.2;">Education</h3>
+                        <p class="fs-5 mb-0 text-white">S대 컴퓨터공학부 졸업</p>
+                    </div>
+
+                    <!-- Career 섹션 -->
+                    <div class="mb-4">
+                        <h3 class="accent mb-3" style="font-size: 1.8rem; line-height: 1.2;">Career</h3>
+                        <ul class="list-unstyled fs-5" style="color: #ccd6f6; line-height: 1.8;">
+                            <li>前) M 교육 플랫폼 조교 1년</li>
+                            <li>前) 목동 C 컴퓨터 종합학원 강사 3년</li>
+                            <li class="text-white fw-bold">現) S 교육 회사 강사</li>
+                        </ul>
+                    </div>
+
+                    <!-- 구분선 및 코멘트 -->
+                    <div class="mt-4 pt-4 border-top" style="border-color: rgba(255, 255, 255, 0.1) !important;">
+                        <p class="fst-italic fs-5 text-dim mb-0" style="line-height: 1.6;">
+                            <span class="accent fs-3">"</span>
+                            단순한 문법 교육이 아닙니다. AI 시대에 가장 효율적으로 <br class="d-none d-lg-block">
+                            논리(Logic)를 구현하는 방법을 함께 고민합니다.
+                            <span class="accent fs-3">"</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div> <!-- row end -->
+    </div> <!-- logos-card end -->
+</div>
+
+<hr class="border-secondary my-5" style="opacity: 0.1;">
+
+<!-- ==========================================
+     3. 커리큘럼 섹션
+     ========================================== -->
+<div class="py-5">
+    <div class="text-center mb-5" data-aos="fade-down">
+        <h2 class="display-5 fw-bold">커리큘럼</h2>
+        <p class="text-dim">초보자부터 취업 준비생까지, 목적에 맞는 트랙을 선택하세요.</p>
+    </div>
+
+    <div class="row g-4">
+        <!-- 바이브 코딩 -->
+        <div class="col-md-6" data-aos="flip-up" data-aos-delay="100">
+            <div class="logos-card p-4 h-100 cursor-pointer" data-bs-toggle="modal" data-bs-target="#vibeModal">
+                <h3 class="accent mb-3">바이브 코딩</h3>
+                <p>AI 프롬프트를 활용해 복잡한 문법 공부 없이 내가 원하는 결과물을 즉시 구현하기</p>
+                <small class="text-info">#AI활용 #생산성 #결과중심</small>
+            </div>
+        </div>
+
+        <!-- 클론 코딩 -->
+        <div class="col-md-6" data-aos="flip-up" data-aos-delay="200">
+            <div class="logos-card p-4 h-100 cursor-pointer" data-bs-toggle="modal" data-bs-target="#cloneModal">
+                <h3 class="accent mb-3">클론 코딩</h3>
+                <p>실제 서비스되는 웹/앱을 똑같이 따라 만들며 실무적인 구조와 흐름 익히기</p>
+                <small class="text-info">#실무감각 #프로젝트 #웹앱개발</small>
+            </div>
+        </div>
+
+        <!-- 하드 코딩 -->
+        <div class="col-md-6" data-aos="flip-up" data-aos-delay="300">
+            <div class="logos-card p-4 h-100 cursor-pointer" data-bs-toggle="modal" data-bs-target="#hardModal">
+                <h3 class="accent mb-3">하드 코딩</h3>
+                <p>AI의 개입 없이 순수 로직을 직접 작성하며 컴퓨터 과학의 기초 실력 다지기</p>
+                <small class="text-info">#기초원리 #CS지식 #로직설계</small>
+            </div>
+        </div>
+
+        <!-- 코딩 테스트 -->
+        <div class="col-md-6" data-aos="flip-up" data-aos-delay="400">
+            <div class="logos-card p-4 h-100 cursor-pointer" data-bs-toggle="modal" data-bs-target="#testModal">
+                <h3 class="accent mb-3">코딩 테스트</h3>
+                <p>알고리즘과 자료구조를 통해 효율적인 문제 해결 능력을 키워 취업 대비하기</p>
+                <small class="text-info">#알고리즘 #취업준비 #문제해결</small>
+            </div>
+        </div>
+    </div>
+
+    <!-- 운영 방식 -->
+    <div class="mt-5 p-4 logos-card border-info" data-aos="fade-up">
+        <h4 class="accent mb-3">운영 방식</h4>
+        <ul class="text-dim mb-0">
+            <li>1주일에 한 번 대면 or 비대면으로 진행</li>
+            <li>각 커리큘럼에 맞춤형으로 과제 진행</li>
+            <li>만남 날짜와 장소는 멘토와 멘티랑 같이 정할 예정</li>
+        </ul>
+    </div>
+</div>
+
+<hr class="border-secondary my-5" style="opacity: 0.1;">
+
+<!-- ==========================================
+     4. 후기 섹션
+     ========================================== -->
+<div class="py-5">
+    <h2 class="display-5 fw-bold mb-5" data-aos="fade-right">후기</h2>
+
+    <div class="reviews-container">
+        <!-- 1번째 후기 (왼쪽) -->
+        <div class="review-wrapper left" data-aos="fade-right">
+            <div class="profile-group">
+                <div class="profile-circle shadow-glow">
+                    <img src="https://i.pinimg.com/736x/ec/b3/32/ecb3320a4cb66ecdd9dd903f1fd6a5d8.jpg" alt="Student 1">
+                </div>
+                <p class="student-name">이O원</p>
+            </div>
+            <div class="review-bubble shadow-glow">
+                "바이브 코딩 처음 접해봐서 어떻게 시작할지도 모르겠는데 정말 빠르게 변화되는 시대에 맞게 여러 기술들을 알려 주셔서 지금은 혼자서도 프롬프팅을 작성할 수 있게 되었습니다."
+            </div>
+        </div>
+
+        <!-- 2번째 후기 (오른쪽) -->
+        <div class="review-wrapper right" data-aos="fade-left">
+            <div class="review-bubble shadow-glow accent-border">
+                "최근 AI가 발전하면서 어떻게 코딩을 공부해야 할지 막막했는데 강사님을 통해 더욱 효율적이고 논리적으로 코딩을 배울 수 있었습니다."
+            </div>
+            <div class="profile-group">
+                <div class="profile-circle shadow-glow">
+                    <img src="https://i.pinimg.com/736x/72/b7/18/72b7182a9780959c2ba6017db50b7fa3.jpg" alt="Student 2">
+                </div>
+                <p class="student-name">김O수</p>
+            </div>
+        </div>
+
+        <!-- 3번째 후기 (왼쪽) -->
+        <div class="review-wrapper left" data-aos="fade-right">
+            <div class="profile-group">
+                <div class="profile-circle shadow-glow">
+                    <img src="https://i.pinimg.com/736x/bd/42/8e/bd428e6bb156d90045700dbf3e967c3e.jpg" alt="Student 3">
+                </div>
+                <p class="student-name">이O우</p>
+            </div>
+            <div class="review-bubble shadow-glow">
+                "클론 코딩을 배울 때 단순히 따라만 하라고 하는 것이 아니라 왜 이런 구조가 되는 것이고 어떻게 작동하는지 하나하나 친절하게 설명해 주셔서 정말 큰 도움이 되었습니다."
+            </div>
+        </div>
+
+        <!-- 4번째 후기 (오른쪽) -->
+        <div class="review-wrapper right" data-aos="fade-left">
+            <div class="review-bubble shadow-glow accent-border">
+                "비전동자라 C언어 공부가 막막했는데 프로그래밍 언어에 대한 기본 구조부터 가장 어려운 포인터까지 자세하게 설명해 주셔서 잘 이해가 되었습니다."
+            </div>
+            <div class="profile-group">
+                <div class="profile-circle shadow-glow">
+                    <img src="https://i.pinimg.com/736x/ed/39/a7/ed39a771e01c2bc1b1e76bf95e95ae25.jpg" alt="Student 4">
+                </div>
+                <p class="student-name">박O빈</p>
+            </div>
+        </div>
+
+        <!-- 5번째 후기 (왼쪽) -->
+        <div class="review-wrapper left" data-aos="fade-right">
+            <div class="profile-group">
+                <div class="profile-circle shadow-glow">
+                    <img src="https://i.pinimg.com/736x/a9/c7/77/a9c777f17a9aac4848a2d0f37c33131a.jpg" alt="Student 5">
+                </div>
+                <p class="student-name">이O연</p>
+            </div>
+            <div class="review-bubble shadow-glow">
+                "대기업 코테 문제들이 너무 어렵고 알고리즘도 어떻게 적용해야 할지 막막했는데 수학 문제 푸는 것처럼 알려주셔서 문제 접근 실력이 향상되었고 알고리즘 적용도 잘할 수 있게 되었습니다."
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr class="border-secondary my-5" style="opacity: 0.1;">
+
+<!-- ==========================================
+     5. FAQ 섹션
+     ========================================== -->
+<div class="py-5">
+    <h2 class="display-5 fw-bold mb-5" data-aos="fade-right">FAQ</h2>
+
+    <div class="accordion accordion-flush" id="faqAccordion" data-aos="fade-up">
+        <!-- 질문 1 -->
+        <div class="accordion-item bg-transparent border-secondary">
+            <h2 class="accordion-header">
+                <button class="accordion-button bg-transparent text-white collapsed accent fs-5" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                    Q. 무료로 진행하는 특별한 이유가 있나요?
+                </button>
+            </h2>
+            <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion" style="color: white;">
+                <div class="accordion-body text-dim">
+                    상업적인 목적보다는 현재 제작 중인 커리큘럼의 강화와 데이터 검증이 주 목적입니다. 대신 멘토링 후 정성스러운 피드백을 부탁드리고 있습니다.
+                </div>
+            </div>
+        </div>
+
+        <!-- 질문 2 -->
+        <div class="accordion-item bg-transparent border-secondary">
+            <h2 class="accordion-header">
+                <button class="accordion-button bg-transparent text-white collapsed accent fs-5" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                    Q. 인문계열/비전공자도 신청 가능한가요?
+                </button>
+            </h2>
+            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion" style="color: white;">
+                <div class="accordion-body text-dim">
+                    물론입니다! 특히 '바이브 코딩' 트랙은 전문적인 코딩 지식이 없어도 AI를 활용해 성과를 낼 수 있도록 구성되어 있어 초보자분들께 적극 추천합니다.
+                </div>
+            </div>
+        </div>
+
+        <!-- 질문 3 -->
+        <div class="accordion-item bg-transparent border-secondary">
+            <h2 class="accordion-header">
+                <button class="accordion-button bg-transparent text-white collapsed accent fs-5" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                    Q. 별도의 준비물이 필요한가요?
+                </button>
+            </h2>
+            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion" style="color: white;">
+                <div class="accordion-body text-dim">
+                    개인 노트북은 필수입니다. 수업은 주로 카페나 룸에서 진행되며, 카페 이용 시 발생하는 본인 음료 비용 정도만 부담해 주시면 됩니다.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr class="border-secondary my-5" style="opacity: 0.1;">
+
+<!-- ==========================================
+     6. 지원하기 섹션
+     ========================================== -->
+<div class="py-5 text-center">
+    <div data-aos="zoom-out" class="mb-5">
+        <h2 class="display-4 fw-bold">Ready to Start?</h2>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <!-- 메인 지원 카드 -->
+            <div class="logos-card p-5 mb-4" data-aos="fade-up">
+                <h3 class="mb-4 text-white">멘토링 신청하기</h3>
+                <p class="text-dim mb-4">밑에 신청하기 버튼으로 멘토링을 신청하세요</p>
+                <a href="https://moaform.com/q/BomWHH" target="_blank" class="btn-logos w-100 py-3 fs-5 mb-4">신청하기</a>
+                
+                <!-- 카드 내부 하단에 문의 링크 배치 (더 깔끔함) -->
+                <div class="pt-4 border-top" style="border-color: rgba(255, 255, 255, 0.1) !important;">
+                    <p class="text-dim small mb-3">문의 사항이 있으시면 실시간 채팅 상담을 이용해 주세요.</p>
+                    <a href="https://open.kakao.com/o/skPhlRui" target="_blank" class="btn btn-sm btn-outline-info px-4">문의하기</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- ==========================================
+     모달 창 영역 (전체 페이지 최하단 배치)
+     ========================================== -->
+<!-- 바이브 코딩 상세 -->
+<div class="modal fade" id="vibeModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content bg-dark border-info shadow-lg">
+            <div class="modal-header border-secondary">
+                <h5 class="modal-title accent fw-bold">바이브 코딩 커리큘럼</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body text-dim">
+                <p class="text-white fw-bold mb-3">"최소한의 지식으로 최대한의 효율 창출."</p>
+                <ul class="list-unstyled mb-4">
+                    <li class="mb-2">AI 프롬프트 엔지니어링 실습</li>
+                    <li class="mb-2">No-Code/Low-Code 툴 활용</li>
+                    <li class="mb-2">아이디어 프로토타입 급속 제작</li>
+                    <li class="mb-2">AI를 활용한 디버깅 및 코드 최적화</li>
+                </ul>
+
+                <!-- 주차별 타임테이블 -->
+                <hr class="border-secondary my-4">
+                <h6 class="text-white fw-bold mb-3"><i class="bi bi-calendar-week accent me-2"></i>4주 완성 타임테이블</h6>
+                <div class="position-relative ps-3 border-start border-secondary style-timeline" style="margin-left: 10px;">
+                    <div class="mb-3 position-relative">
+                        <span class="position-absolute bg-info rounded-circle" style="width: 8px; height: 8px; left: -20px; top: 7px;"></span>
+                        <div class="text-white fw-bold small">1주차. AI 프롬프트 엔지니어링 기초</div>
+                        <p class="small text-white-50 mb-0">LLM의 이해, 효과적인 역할 부여 및 Persona 설정, Few-shot 프롬프팅 실습</p>
+                    </div>
+                    <div class="mb-3 position-relative">
+                        <span class="position-absolute bg-info rounded-circle" style="width: 8px; height: 8px; left: -20px; top: 7px;"></span>
+                        <div class="text-white fw-bold small">2주차. Low-Code & No-Code 툴 마스터</div>
+                        <p class="small text-white-50 mb-0">주요 노코드 툴 연동 및 API 가이드라인 해석, 자동화 워크플로우 설계</p>
+                    </div>
+                    <div class="mb-3 position-relative">
+                        <span class="position-absolute bg-info rounded-circle" style="width: 8px; height: 8px; left: -20px; top: 7px;"></span>
+                        <div class="text-white fw-bold small">3주차. 초고속 프로토타이핑 빌드</div>
+                        <p class="small text-white-50 mb-0">AI 빌더를 활용한 UI/UX 초안 제작, 핵심 기능 위주의 MVP(최소 기능 제품) 구현</p>
+                    </div>
+                    <div class="position-relative">
+                        <span class="position-absolute bg-info rounded-circle" style="width: 8px; height: 8px; left: -20px; top: 7px;"></span>
+                        <div class="text-white fw-bold small">4주차. AI 디버깅 및 서비스 고도화</div>
+                        <p class="small text-white-50 mb-0">에러 로그 분석 요청 기법, 코드 리팩토링 및 엣지 케이스 예외 처리 최적화</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 클론 코딩 상세 (id="cloneModal" 교정 완료) -->
+<div class="modal fade" id="cloneModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content bg-dark border-info shadow-lg">
+            <div class="modal-header border-secondary">
+                <h5 class="modal-title accent fw-bold">클론 코딩 커리큘럼</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body text-dim">
+                <p class="text-white fw-bold mb-3">"실제로 서비스되는 웹/앱을 내 손으로 직접 제작."</p>
+                <ul class="list-unstyled mb-4">
+                    <li class="mb-2">최신 웹 프레임워크 실습</li>
+                    <li class="mb-2">UI/UX 컴포넌트 설계 및 구현</li>
+                    <li class="mb-2">공공 API 및 DB 연동 실습</li>
+                    <li class="mb-2">서비스 배포 프로세스 이해</li>
+                </ul>
+
+                <hr class="border-secondary my-4">
+                <h6 class="text-white fw-bold mb-3"><i class="bi bi-calendar-week accent me-2"></i>4주 완성 타임테이블</h6>
+                <div class="position-relative ps-3 border-start border-secondary" style="margin-left: 10px;">
+                    <div class="mb-3 position-relative">
+                        <span class="position-absolute bg-info rounded-circle" style="width: 8px; height: 8px; left: -20px; top: 7px;"></span>
+                        <div class="text-white fw-bold small">1주차. 프레임워크 환경 설정 및 구조 파악</div>
+                        <p class="small text-white-50 mb-0">개발 환경 세팅, 프로젝트 디렉토리 구조 및 핵심 라우팅 시스템 이해</p>
+                    </div>
+                    <div class="mb-3 position-relative">
+                        <span class="position-absolute bg-info rounded-circle" style="width: 8px; height: 8px; left: -20px; top: 7px;"></span>
+                        <div class="text-white fw-bold small">2주차. UI/UX 컴포넌트 및 레이아웃 구현</div>
+                        <p class="small text-white-50 mb-0">UI 컴포넌트 단위 설계, 반응형 레이아웃 구성 및 스타일링 완성</p>
+                    </div>
+                    <div class="mb-3 position-relative">
+                        <span class="position-absolute bg-info rounded-circle" style="width: 8px; height: 8px; left: -20px; top: 7px;"></span>
+                        <div class="text-white fw-bold small">3주차. 데이터베이스 연동 및 외부 API 연동</div>
+                        <p class="small text-white-50 mb-0">데이터 모델링, CRUD 비즈니스 로직 작성, 비동기 통신 데이터 처리</p>
+                    </div>
+                    <div class="position-relative">
+                        <span class="position-absolute bg-info rounded-circle" style="width: 8px; height: 8px; left: -20px; top: 7px;"></span>
+                        <div class="text-white fw-bold small">4주차. 프로덕션 배포 및 최적화</div>
+                        <p class="small text-white-50 mb-0">클라우드 플랫폼 환경 배포, 환경 변수 안전 관리, 웹 성능 및 최적화 검증</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 하드 코딩 상세 -->
+<div class="modal fade" id="hardModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content bg-dark border-info shadow-lg">
+            <div class="modal-header border-secondary">
+                <h5 class="modal-title accent fw-bold">하드 코딩 상세 정보</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body text-dim">
+                <p class="text-white fw-bold mb-3">"AI의 도움 없이 스스로 생각하는 실력 향상."</p>
+                <ul class="list-unstyled mb-4">
+                    <li class="mb-2">프로그래밍 언어에 대한 이해(C언어, Python, Java 등)</li>
+                    <li class="mb-2">핵심 문법 및 데이터 타입 심화</li>
+                    <li class="mb-2">함수 작성 및 실제 적용</li>
+                    <li class="mb-2">테스트 코드 작성 및 코드 리뷰</li>
+                </ul>
+
+                <hr class="border-secondary my-4">
+                <h6 class="text-white fw-bold mb-3"><i class="bi bi-calendar-week accent me-2"></i>4주 완성 타임테이블</h6>
+                <div class="position-relative ps-3 border-start border-secondary" style="margin-left: 10px;">
+                    <div class="mb-3 position-relative">
+                        <span class="position-absolute bg-info rounded-circle" style="width: 8px; height: 8px; left: -20px; top: 7px;"></span>
+                        <div class="text-white fw-bold small">1주차. 컴퓨터 메커니즘과 자료형 심화</div>
+                        <p class="small text-white-50 mb-0">컴파일러와 메모리 구조, 기본 자료형 및 변수의 스코프(유효 범위) 완벽 분석</p>
+                    </div>
+                    <div class="mb-3 position-relative">
+                        <span class="position-absolute bg-info rounded-circle" style="width: 8px; height: 8px; left: -20px; top: 7px;"></span>
+                        <div class="text-white fw-bold small">2주차. 제어문과 조건 연산의 본질</div>
+                        <p class="small text-white-50 mb-0">복잡한 조건문 분석, 제어 로직 구조화, 무한 루프 탈출 및 예외 상황 설계</p>
+                    </div>
+                    <div class="mb-3 position-relative">
+                        <span class="position-absolute bg-info rounded-circle" style="width: 8px; height: 8px; left: -20px; top: 7px;"></span>
+                        <div class="text-white fw-bold small">3주차. 함수적 사고와 모듈화 기법</div>
+                        <p class="small text-white-50 mb-0">매개변수와 반환값 메커니즘, 재귀 함수 흐름 추적, 독립적인 모듈 단위 설계</p>
+                    </div>
+                    <div class="position-relative">
+                        <span class="position-absolute bg-info rounded-circle" style="width: 8px; height: 8px; left: -20px; top: 7px;"></span>
+                        <div class="text-white fw-bold small">4주차. 테스트 코드 설계 및 자체 리팩토링</div>
+                        <p class="small text-white-50 mb-0">유닛 테스트 케이스 도출, 디버거 수동 추적, 동료 코드 리뷰 기반 리팩토링 실습</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 코딩 테스트 상세 -->
+<div class="modal fade" id="testModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content bg-dark border-info shadow-lg">
+            <div class="modal-header border-secondary">
+                <h5 class="modal-title accent fw-bold">코딩 테스트 상세 정보</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body text-dim">
+                <p class="text-white fw-bold mb-3">"효율적인 문제 해결을 위한 알고리즘 정복."</p>
+                <ul class="list-unstyled mb-4">
+                    <li class="mb-2">핵심 자료구조(Array, Hash, Graph 등)</li>
+                    <li class="mb-2">필수 알고리즘(DFS/BFS, Greedy, DP 등)</li>
+                    <li class="mb-2">시간 복잡도 분석 및 최적화</li>
+                    <li class="mb-2">실전 모의 코딩 테스트</li>
+                </ul>
+
+                <hr class="border-secondary my-4">
+                <h6 class="text-white fw-bold mb-3"><i class="bi bi-calendar-week accent me-2"></i>4주 완성 타임테이블</h6>
+                <div class="position-relative ps-3 border-start border-secondary" style="margin-left: 10px;">
+                    <div class="mb-3 position-relative">
+                        <span class="position-absolute bg-info rounded-circle" style="width: 8px; height: 8px; left: -20px; top: 7px;"></span>
+                        <div class="text-white fw-bold small">1주차. 선형/비선형 자료구조 마스터</div>
+                        <p class="small text-white-50 mb-0">Array, String 최적화 탐색, Hash Map 및 Set 활용 기법, Graph 표현식 마스터</p>
+                    </div>
+                    <div class="mb-3 position-relative">
+                        <span class="position-absolute bg-info rounded-circle" style="width: 8px; height: 8px; left: -20px; top: 7px;"></span>
+                        <div class="text-white fw-bold small">2주차. 핵심 그래프 탐색 및 그리디</div>
+                        <p class="small text-white-50 mb-0">재귀와 스택 기반 DFS, 큐 기반 BFS 깊이 이해, 탐욕법(Greedy) 조건 도출 방법론</p>
+                    </div>
+                    <div class="mb-3 position-relative">
+                        <span class="position-absolute bg-info rounded-circle" style="width: 8px; height: 8px; left: -20px; top: 7px;"></span>
+                        <div class="text-white fw-bold small">3주차. 동적 계획법 및 효율성 분석</div>
+                        <p class="small text-white-50 mb-0">DP 점화식 설계 패턴, 메모이제이션 전략, 빅오표기법 기반 시간/공간 복잡도 최적화</p>
+                    </div>
+                    <div class="position-relative">
+                        <span class="position-absolute bg-info rounded-circle" style="width: 8px; height: 8px; left: -20px; top: 7px;"></span>
+                        <div class="text-white fw-bold small">4주차. 실전 모의 테스트 및 문제 분석</div>
+                        <p class="small text-white-50 mb-0">실전 타임아웃 환경 테스트 수행, 디버깅 팁 공유, 오답 노트를 통한 최적화 풀이 피드백</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- ==========================================
+     통합 스타일 시트 (모든 섹션 CSS 취합)
+     ========================================== -->
+<style>
+    /* 공통 글로벌 스타일 요소 */
+    .text-dim {
+        color: #8892b0;
+    }
+    img {
+        border: none !important;
+        outline: none !important;
+        box-shadow: none !important;
+    }
+    h1 {
+        color: var(--text-main);
+        text-shadow: 0 0 15px rgba(0, 242, 255, 0.3);
+    }
+
+    /* 강사 소개 모바일 스타일 */
+    @media (max-width: 767px) {
+        .row {
+            display: block;
+        }
+        img {
+            max-height: 350px !important;
+            margin-bottom: 2rem;
+            object-fit: contain;
+        }
+    }
+
+    /* 커리큘럼 카드 및 모달 스타일 */
+    .cursor-pointer {
+        cursor: pointer;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .cursor-pointer:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 0 15px rgba(0, 242, 255, 0.3);
+    }
+    .modal-content {
+        background-color: #112240 !important;
+        border: 1px solid var(--accent-cyan) !important;
+    }
+    .modal-header {
+        border-bottom: 1px solid rgba(0, 242, 255, 0.1) !important;
+    }
+    .btn-close-white {
+        filter: invert(1) grayscale(100%) brightness(200%);
+    }
+
+    /* 후기 레이아웃 스타일 */
+    .reviews-container {
+        display: flex;
+        flex-direction: column;
+        gap: 80px;
+        max-width: 1000px;
+        margin: 0 auto;
+        padding-bottom: 100px;
+    }
+    .review-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        width: 100%;
+    }
+    .review-wrapper.right {
+        justify-content: flex-end;
+    }
+    .profile-group {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-width: 120px;
+    }
+    .profile-circle {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 2px solid var(--accent-cyan);
+        margin-bottom: 15px;
+    }
+    .profile-circle img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .student-name {
+        font-family: 'GangwonEducationTteontteon', sans-serif;
+        color: var(--accent-cyan);
+        font-size: 1rem;
+        margin: 0;
+    }
+    .review-bubble {
+        background-color: rgba(255, 255, 255, 0.05);
+        padding: 30px 40px;
+        border-radius: 30px;
+        color: #ccd6f6;
+        font-size: 1.15rem;
+        line-height: 1.8;
+        max-width: 650px;
+        position: relative;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .accent-border {
+        border-color: rgba(0, 242, 255, 0.2);
+    }
+    .shadow-glow {
+        box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+        transition: transform 0.3s ease;
+    }
+    .shadow-glow:hover {
+        transform: translateY(-5px);
+        background-color: rgba(255, 255, 255, 0.08);
+    }
+
+    /* 후기 모바일 반응형 */
+    @media (max-width: 768px) {
+        .review-wrapper, .review-wrapper.right {
+            flex-direction: column !important;
+            text-align: center;
+            gap: 20px;
+        }
+        .review-bubble {
+            order: 2;
+            padding: 20px;
+        }
+        .profile-group {
+            order: 1;
+        }
+    }
+
+    /* FAQ 아코디언 스타일 */
+    .accordion-button::after { filter: invert(1); }
+    .accordion-button:not(.collapsed) { background-color: rgba(0, 242, 255, 0.1) !important; color: #00F2FF !important; }
+</style>
 {% endblock %}
